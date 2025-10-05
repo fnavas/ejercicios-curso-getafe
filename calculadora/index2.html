@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #calculadora {
+            margin: 0 auto;
+            margin-top: 50px;
+        }
+        #teclado {
+            display: grid;
+            grid-template-columns: repeat(4, 50px);
+            grid-gap: 5px;
+            width: max-content;
+            margin: 20px;
+        }
+        #teclado button {
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+        }
+    </style>
+    <script>
+        function agregarNumero(numero) {
+            document.getElementById('display').value += numero;
+        }
+        function agregarOperacion(operacion) {
+            document.getElementById('display').value += ' ' + operacion + ' ';
+        }
+
+        function calcularResultado() {
+            const display = document.getElementById('display');
+            try {
+                //const resultado = eval(display.value);
+                //display.value = resultado;
+                display.value = eval(display.value);
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
+        function limpiarDisplay() {
+            document.getElementById('display').value = '';
+        }
+        a += b;
+    </script>
+</head>
+<body>
+    <div id="calculadora">
+        <input type="text" id="display" disabled>
+        <br>
+        <div id="teclado">
+            <button id="btn7" onclick="agregarNumero(7)">7</button>
+            <button id="btn8" onclick="agregarNumero(8)">8</button>
+            <button id="btn9" onclick="agregarNumero(9)">9</button>
+            <button id="btnDividir" onclick="agregarOperacion('/')">/</button>
+            <button id="btn4" onclick="agregarNumero(4)">4</button>
+            <button id="btn5" onclick="agregarNumero(5)">5</button>
+            <button id="btn6" onclick="agregarNumero(6)">6</button>
+            <button id="btnMultiplicar" onclick="agregarOperacion('*')">*</button>
+            <button id="btn1" onclick="agregarNumero(1)">1</button>
+            <button id="btn2" onclick="agregarNumero(2)">2</button>
+            <button id="btn3" onclick="agregarNumero(3)">3</button>
+            <button id="btnRestar" onclick="agregarOperacion('-')">-</button>
+            <button id="btn0" onclick="agregarNumero(0)">0</button>
+            <button id="btnPunto" onclick="agregarNumero('.')">.</button>
+            <button id="btnIgual" onclick="calcularResultado()">=</button>
+            <button id="btnSumar" onclick="agregarOperacion('+')">+</button>
+            <button id="btnClear" onclick="limpiarDisplay()">C</button>
+        </div>
+    </div>
+</body>
+</html>
