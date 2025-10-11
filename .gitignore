@@ -1,0 +1,31 @@
+# Archivos y carpetas de IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Archivos de compilación Maven
+target/
+
+# Archivos de logs
+*.log
+
+# Archivos temporales del sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración locales (por si acaso)
+*.swp
+*.swo
+*.bak
+
+# Archivos de compilación adicionales
+dependency-reduced-pom.xml
+release.properties
+
+# Carpetas de Maven Wrapper (si usas wrapper)
+.mvn/
+mvnw
+mvnw.cmd
+
+# Archivos de entorno
+.env
